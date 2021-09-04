@@ -1,6 +1,11 @@
+import 'dart:math';
+
 import 'package:auto_animated/auto_animated.dart';
-import 'package:expire_date/model/colors.dart';
+import 'package:expire_date/model/consts.dart';
+import 'package:expire_date/view/add_element_screen.dart';
+import 'package:expire_date/view/widgets/app_bar_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'widgets/list_tile_home_widget.dart';
 import 'widgets/photo_home_widget.dart';
 
@@ -9,14 +14,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.backgroundColor,
-      appBar: AppBar(
-        backgroundColor: MyColors.backgroundColor,
-        elevation: 30,
-        title: Text(
-          "Expire Date",
-          style: Styles.textStyle.copyWith(fontSize: 18),
-        ),
-      ),
+      appBar: AppBarWidget(title: "Expire Date"),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -115,12 +113,6 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  // separatorBuilder: (context, i) => Divider(
-                  //       color: MyColors.hintColor,
-                  //       height: 20,
-                  //       indent: 30,
-                  //       endIndent: 30,
-                  //     ),
                 ),
                 itemCount: 3,
               ),
@@ -129,7 +121,18 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              PageTransition(
+                child: AddElementOrDetailsScreen(
+                  isAddScreen: true,
+                  
+                ),
+                type: list[Random().nextInt(list.length)],
+                alignment: list2[Random().nextInt(list2.length)],
+              ));
+        },
         child: Icon(
           Icons.add,
           color: MyColors.textColor,

@@ -1,5 +1,6 @@
 import 'package:auto_animated/auto_animated.dart';
-import 'package:expire_date/model/colors.dart';
+import 'package:expire_date/model/consts.dart';
+import 'package:expire_date/view/widgets/app_bar_widget.dart';
 import 'package:expire_date/view/widgets/list_tile_home_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -13,14 +14,7 @@ class _AllOrExpiredElementsListState extends State<AllOrExpiredElementsList> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.backgroundColor,
-      appBar: AppBar(
-        elevation: 30,
-        backgroundColor: MyColors.backgroundColor,
-        title: Text(
-          "All Elements",
-          style: Styles.textStyle.copyWith(fontSize: 18),
-        ),
-      ),
+      appBar: AppBarWidget(title: "All Elements"),
       body: LiveList(
         itemCount: 40,
         itemBuilder: (context, i, animation) => FadeTransition(
