@@ -129,8 +129,8 @@ class HomeScreen extends StatelessWidget {
                   isAddScreen: true,
                   
                 ),
-                type: list[Random().nextInt(list.length)],
-                alignment: list2[Random().nextInt(list2.length)],
+                type: pageTransitionTypeList[Random().nextInt(pageTransitionTypeList.length)],
+                alignment: alignmentList[Random().nextInt(alignmentList.length)],
               ));
         },
         child: Icon(

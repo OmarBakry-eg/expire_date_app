@@ -19,8 +19,8 @@ class ListTileWidget extends StatelessWidget {
               child: AddElementOrDetailsScreen(
                 isAddScreen: false,
               ),
-              type: list[Random().nextInt(list.length)],
-              alignment: list2[Random().nextInt(list2.length)],
+              type: pageTransitionTypeList[Random().nextInt(pageTransitionTypeList.length)],
+              alignment: alignmentList[Random().nextInt(alignmentList.length)],
             ));
       },
       leading: Container(

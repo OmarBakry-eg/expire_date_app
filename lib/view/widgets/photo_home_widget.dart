@@ -1,6 +1,9 @@
+import 'dart:math';
+
 import 'package:expire_date/model/consts.dart';
 import 'package:expire_date/view/AllOrExpiredElementsScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 class DescWidget extends StatelessWidget {
   final String imageAsset, textDesc;
@@ -12,7 +15,13 @@ class DescWidget extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (c) => AllOrExpiredElementsList()));
+            Navigator.push(
+                context,
+                PageTransition(
+                  child: AllOrExpiredElementsList(),
+                  type: pageTransitionTypeList[Random().nextInt(pageTransitionTypeList.length)],
+                  alignment: alignmentList[Random().nextInt(alignmentList.length)],
+                ));
           },
           child: Container(
             width: 170,

@@ -15,7 +15,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
         style: Styles.textStyle.copyWith(fontSize: 18),
       ),
       actions: [
-        title == 'Expire Date'
+        title == 'Expire Date' || title == 'All Elements'
             ? Offstage()
             : isAddScreen
                 ? IconButton(onPressed: () {}, icon: Icon(Icons.check, color: Colors.white))

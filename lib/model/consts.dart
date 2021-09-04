@@ -23,7 +23,7 @@ mixin Styles {
   );
 }
 
-List<PageTransitionType> list = [
+List<PageTransitionType> pageTransitionTypeList = [
   PageTransitionType.fade,
   PageTransitionType.rightToLeft,
   PageTransitionType.leftToRight,
@@ -36,7 +36,7 @@ List<PageTransitionType> list = [
   PageTransitionType.leftToRightWithFade,
 ];
 
-List<Alignment> list2 = [
+List<Alignment> alignmentList = [
   Alignment.topLeft,
   Alignment.topCenter,
   Alignment.topRight,
